@@ -3,47 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <title>Megan Ring</title>
-    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet"/>
     <style>
-    body {
-        font-family: Comfortaa, sans-serif;
-        color: #7d8485;
-        height: 100vh;
-        overflow: hidden;
-        margin: 0;
-    }
+        body {
+            font-family: Comfortaa, sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+        }
 
-    .main {
-        height: 100%;
-        width: 100%;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 15;
-        position: absolute;
-        overflow: auto;
-    }
+        .color {
+            color: #7d8485;
+        }
 
-    .fg-main {
-        margin: 48px 16px 32px 32px;
-    }
+        .bg-main {
+            height: 100%;
+            width: 100%;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            position: absolute;
+            overflow: auto;
+        }
 
-    .header {
-    }
+        .fg-main {
+            margin-top: 12%;
+        }
 
-    .content {
-        height: 99vh;
-    }
+        .flex-space-between {
+            display: flex;
+            display: -webkit-flex;
+            justify-content: space-between;
+            -webkit-justify-content: space-between;
+        }
+
+        .flex-column-center {
+            flex-direction: column;
+            -webkit-flex-direction: column;
+            justify-content: center;
+            -webkit-justify-content: center;
+            align-items: center;
+            -webkit-align-items: center;
+        }
+
+        .header-text {
+            font-size: 40px;
+        }
+
+        .medium-text {
+            font-size: 24px;
+        }
+
+        .links {
+            width: 15%;
+            min-width: 100px;
+            margin-top: 10px;
+        }
 
     </style>
+    <script src="https://use.fontawesome.com/5baa6bea7f.js"></script>
 </head>
-<body>
-    <div class="main">
-
-    <div class="fg-main">
-        <div class="content">
-            <h1 class="header">Megan Ring</h1>
+<body class="color">
+<div class="bg-main">
+    <div class="fg-main flex-space-between flex-column-center">
+        <h1 class="header-text">Megan Ring</h1>
+            <p class="medium-text">I code, draw, design and build.</p>
+            <div class="links flex-space-between">
+                <div class="icon-wrapper">
+                    <a class="color" href="https://github.com/megaohms" target="_self">
+                        <i class="fa fa-github fa-2x">
+                        </i>
+                    </a>
+                </div>
+                <div class="icon-wrapper">
+                    <a class="color" href="https://linkedin.com/in/meganbethring" target="_self">
+                        <i class="fa fa-linkedin-square fa-2x"></i>
+                    </a>
+                </div>
+                <div class="icon-wrapper">
+                    <a class="color" href="https://angel.co/megan-ring" target="_self">
+                        <i class="fa fa-angellist fa-2x"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </body>
@@ -58,18 +102,18 @@
             .attr("id", "bg-gradient");
 
     linearGradient.attr({
-                x1: "30%",
-                x2: "90%",
-                y1: "30%",
-                y2: "95%"
-            })
-        .selectAll("stop")
+        x1: "30%",
+        x2: "90%",
+        y1: "30%",
+        y2: "95%"
+    })
+            .selectAll("stop")
             .data([
                 { offset: "0%", color: "azure" },
-                { offset: "50%", color: "aliceblue"},
-                { offset: "125%", color: "mintcream"}
+                { offset: "50%", color: "aliceblue" },
+                { offset: "125%", color: "mintcream" }
             ])
-        .enter().append("stop")
+            .enter().append("stop")
             .attr("offset", function(d) {
                 return d.offset;
             })

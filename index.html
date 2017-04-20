@@ -132,5 +132,10 @@
             height: "100%"
         })
         .style("fill", "url(#bg-gradient)");
+
+    mixpanel.track('page viewed', {
+        'page name' : document.title,
+        'url' : window.location.pathname
+    });
 </script>
 </html>

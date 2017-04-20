@@ -139,7 +139,10 @@
 
     mixpanel.track('page viewed', {
         'page name' : document.title,
-        'url' : window.location.pathname,
+        'url' : window.location.pathname
+    });
+
+    mixpanel.track('color', {
         'color': whichColor
     });
 </script>

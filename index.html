@@ -106,6 +106,10 @@
     var linearGradient = defs.append("linearGradient")
             .attr("id", "bg-gradient");
 
+    var colors = [ "lavenderBlush", "aliceblue", "whiteSmoke", "ivory", "floralWhite", "honeyDew", "whiteSmoke", "aliceblue" ];
+    var randIdx = Math.round(Math.random()*7.49);
+    var whichColor = colors[randIdx];
+
     linearGradient.attr({
             x1: "30%",
             x2: "90%",
@@ -115,7 +119,7 @@
         .selectAll("stop")
         .data([
             { offset: "0%", color: "azure" },
-            { offset: "50%", color: "aliceblue" }, // whiteSmoke, ivory, honeyDew, lavenderBlush, floralWhite, lavender, lightCyan
+            { offset: "50%", color: whichColor }, // whiteSmoke, ivory, honeyDew, lavenderBlush, floralWhite, lavender
             { offset: "125%", color: "mintcream" }
         ])
         .enter().append("stop")
@@ -135,7 +139,8 @@
 
     mixpanel.track('page viewed', {
         'page name' : document.title,
-        'url' : window.location.pathname
+        'url' : window.location.pathname,
+        'color': whichColor
     });
 </script>
 </html>
